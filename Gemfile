@@ -40,6 +40,7 @@ group :development, :test do
   gem 'launchy'
   gem 'capybara'
   gem 'orderly'
+  gem 'jsonapi-serializer'
 end
 
 group :development do
