@@ -30,8 +30,16 @@
           1,
           null
         ]
+      },
+      "/Users/maryturpin/turing/3Module/project/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1661927622
+    "timestamp": 1661981968
   }
 }
