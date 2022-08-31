@@ -1,8 +1,10 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/maryturpin/turing/3Module/project/rails-engine/app/models/customer.rb": {
+      "/Users/maryturpin/turing/3Module/project/rails-engine/app/models/merchant.rb": {
         "lines": [
+          1,
+          1,
           1,
           null
         ]
@@ -14,59 +16,22 @@
           null
         ]
       },
-      "/Users/maryturpin/turing/3Module/project/rails-engine/spec/models/item_spec.rb": {
+      "/Users/maryturpin/turing/3Module/project/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
-          null,
           1,
           1,
-          2,
-          null,
-          null,
-          1,
-          2,
-          2,
-          2,
-          2,
           null,
           null
         ]
       },
-      "/Users/maryturpin/turing/3Module/project/rails-engine/app/models/item.rb": {
+      "/Users/maryturpin/turing/3Module/project/rails-engine/app/controllers/application_controller.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/maryturpin/turing/3Module/project/rails-engine/spec/models/merchant_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          2,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/maryturpin/turing/3Module/project/rails-engine/app/models/merchant.rb": {
-        "lines": [
-          1,
-          1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1661926151
+    "timestamp": 1661927622
   }
 }
