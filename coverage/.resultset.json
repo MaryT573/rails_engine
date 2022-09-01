@@ -16,13 +16,20 @@
           null
         ]
       },
-      "/Users/maryturpin/turing/3Module/project/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+      "/Users/maryturpin/turing/3Module/project/rails-engine/app/models/item.rb": {
         "lines": [
           1,
           1,
           1,
-          null,
-          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/maryturpin/turing/3Module/project/rails-engine/app/controllers/api/v1/items_controller.rb": {
+        "lines": [
+          1,
           1,
           1,
           null,
@@ -35,35 +42,6 @@
           null
         ]
       },
-      "/Users/maryturpin/turing/3Module/project/rails-engine/app/serializers/merchant_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/maryturpin/turing/3Module/project/rails-engine/app/models/item.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/maryturpin/turing/3Module/project/rails-engine/app/controllers/api/v1/merchants/items_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
       "/Users/maryturpin/turing/3Module/project/rails-engine/app/serializers/item_serializer.rb": {
         "lines": [
           1,
@@ -73,6 +51,6 @@
         ]
       }
     },
-    "timestamp": 1662008244
+    "timestamp": 1662009163
   }
 }
