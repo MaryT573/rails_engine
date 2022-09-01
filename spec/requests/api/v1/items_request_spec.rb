@@ -93,4 +93,20 @@ describe "item API" do
         expect(Item.count).to eq(0)
         expect{Item.find(item.id)}.to raise_error(ActiveRecord::RecordNotFound)
     end
+
+    it 'can update a single item' do
+        item = create(:item)
+        item_change = { name: "Pizza" }
+
+        patch "/api/v1/items/#{item.id}", params: { item: item_change }, as: :json
+        changed_item = Item.find_by(id: item.id)
+
+        expect(response).to be_successful
+
+        expect(changed_item.name).to eq("Pizza")
+        expect(changed_item.name).to_not eq(item.name)
+    end
+
+    it 'can find an items merchant' do
+    end
 end
