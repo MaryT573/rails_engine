@@ -70,7 +70,7 @@ describe "merchant API" do
   it 'can find merchant with partial name' do
     merchant = create(:merchant, name: "jeff")
     
-    get "/api/v1/merchants/find?name=je"
+    get "/api/v1/merchants/find?name=e"
 
     expect(response).to be_successful
 

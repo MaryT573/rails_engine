@@ -121,4 +121,22 @@ describe "item API" do
         expect(merchant_returned[:data][:attributes][:name]).to eq(merchant.name)
         expect(merchant_returned[:data][:type]).to eq("merchant")
     end
+
+    it 'can return all items with a search term' do
+        merchant = create(:merchant)
+        item1 = merchant.items.create(name: "Jeff's Coffee", description: "it's coffee", unit_price: 0.25)
+        item2 = merchant.items.create(name: "Eagle's", description: "it's coffee", unit_price: 0.25)
+        item3 = merchant.items.create(name: "Boat", description: "it's coffee", unit_price: 0.25)
+        item4 = merchant.items.create(name: "Tuna", description: "it's coffee", unit_price: 0.25)
+        
+        get "/api/v1/items/find_all?name=e"
+
+        expect(response).to be_successful
+
+        items_returned = JSON.parse(response.body, symbolize_names: true)
+
+        expect(items_returned[:data].count).to eq(2)
+        expect(items_returned[:data].first).to eq(item1)
+        expect(items_returned[:data].last).to eq(item2)
+    end
 end
