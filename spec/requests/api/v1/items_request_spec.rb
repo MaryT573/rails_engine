@@ -35,28 +35,29 @@ describe "item API" do
     end
 
     it 'can return a single item' do
-        merchant = create(:merchant)
-        item = create_list(:item, 1, merchant_id: merchant.id)
+        #merchant = create(:merchant)
+        item = create(:item)
+        id = item.id
         
-        get "/api/v1/items/#{item.id}"
+        get "/api/v1/items/#{id}"
 
         expect(response).to be_successful
 
         item = JSON.parse(response.body, symbolize_names: true)
-
-        expect(item).to have_key(:id)
-        expect(item[:id]).to be_an(String)
+        
+        expect(item[:data]).to have_key(:id)
+        expect(item[:data][:id]).to be_an(String)
       
-        expect(item[:attributes]).to have_key(:name)
-        expect(item[:attributes][:name]).to be_a(String)
+        expect(item[:data][:attributes]).to have_key(:name)
+        expect(item[:data][:attributes][:name]).to be_a(String)
       
-        expect(item[:attributes]).to have_key(:description)
-        expect(item[:attributes][:description]).to be_a(String)
+        expect(item[:data][:attributes]).to have_key(:description)
+        expect(item[:data][:attributes][:description]).to be_a(String)
       
-        expect(item[:attributes]).to have_key(:unit_price)
-        expect(item[:attributes][:unit_price]).to be_a(Float)
+        expect(item[:data][:attributes]).to have_key(:unit_price)
+        expect(item[:data][:attributes][:unit_price]).to be_a(Float)
       
-        expect(item[:attributes]).to have_key(:merchant_id)
-        expect(item[:attributes][:merchant_id]).to be_a(Integer)
+        expect(item[:data][:attributes]).to have_key(:merchant_id)
+        expect(item[:data][:attributes][:merchant_id]).to be_a(Integer)
     end
 end
