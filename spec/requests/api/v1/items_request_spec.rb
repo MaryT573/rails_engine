@@ -35,7 +35,6 @@ describe "item API" do
     end
 
     it 'can return a single item' do
-        #merchant = create(:merchant)
         item = create(:item)
         id = item.id
         
@@ -59,5 +58,29 @@ describe "item API" do
       
         expect(item[:data][:attributes]).to have_key(:merchant_id)
         expect(item[:data][:attributes][:merchant_id]).to be_a(Integer)
+    end
+
+    it 'can create an item' do
+        merchant = create(:merchant)
+        item = ({
+            name: 'Johns peanut butter',
+            description: 'suspiciously cheap peanut butter',
+            unit_price: 0.25,
+            merchant_id: merchant.id
+        })
+        
+        post "/api/v1/items", params: { item: item }, as: :json
+
+        new_item = Item.last
+        
+        expect(response).to be_successful
+        
+        expect(new_item.name).to eq(item[:name])
+        expect(new_item.description).to eq(item[:description])
+        expect(new_item.unit_price).to eq(item[:unit_price])
+        expect(new_item.merchant_id).to eq(item[:merchant_id])
+    end
+
+    it 'can delete an item' do
     end
 end
