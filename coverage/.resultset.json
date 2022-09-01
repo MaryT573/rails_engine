@@ -75,8 +75,26 @@
           1,
           null
         ]
+      },
+      "/Users/maryturpin/turing/3Module/project/rails-engine/app/controllers/api/v1/item_merchants_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/maryturpin/turing/3Module/project/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1662069068
+    "timestamp": 1662072624
   }
 }

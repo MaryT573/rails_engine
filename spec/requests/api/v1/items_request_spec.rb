@@ -108,5 +108,17 @@ describe "item API" do
     end
 
     it 'can find an items merchant' do
+        merchant = create(:merchant)
+        merchant.items = create_list(:item, 1, merchant_id: merchant.id)
+        id = merchant.items.first.id
+        
+        get "/api/v1/items/#{id}/merchants"
+
+        expect(response).to be_successful
+
+        merchant_returned = JSON.parse(response.body, symbolize_names: true)
+         
+        expect(merchant_returned[:data][:attributes][:name]).to eq(merchant.name)
+        expect(merchant_returned[:data][:type]).to eq("merchant")
     end
 end
