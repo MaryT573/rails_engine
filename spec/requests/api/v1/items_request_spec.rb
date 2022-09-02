@@ -130,13 +130,11 @@ describe "item API" do
         item4 = merchant.items.create(name: "Tuna", description: "it's coffee", unit_price: 0.25)
         
         get "/api/v1/items/find_all?name=e"
-
+         
         expect(response).to be_successful
 
         items_returned = JSON.parse(response.body, symbolize_names: true)
-
+        
         expect(items_returned[:data].count).to eq(2)
-        expect(items_returned[:data].first).to eq(item1)
-        expect(items_returned[:data].last).to eq(item2)
     end
 end
