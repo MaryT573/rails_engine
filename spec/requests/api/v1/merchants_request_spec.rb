@@ -66,4 +66,16 @@ describe "merchant API" do
       expect(item[:attributes][:merchant_id]).to be_a(Integer)
     end
   end
+
+  it 'can find merchant with partial name' do
+    merchant = create(:merchant, name: "jeff")
+    
+    get "/api/v1/merchants/find?name=e"
+
+    expect(response).to be_successful
+
+    merchant_returned = JSON.parse(response.body, symbolize_names: true)
+
+    expect(merchant_returned[:data][:attributes][:name]).to eq(merchant.name)
+  end
 end
